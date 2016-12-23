@@ -1,16 +1,19 @@
 (ns ^:figwheel-load fig-boot-reload.core
-  (:require [figwheel.client.file-reloading :as fig-reload]))
+  (:require [clojure.string :as str]
+            [figwheel.client.file-reloading :as fig-reload]
+            [dommy.core :as dommy]))
 
 (enable-console-print!)
 
 ;; define your app data so that it doesn't get over-written on reload
 
-(defonce app-state (atom {:text "Hello world!"}))
+(defonce aapp-state (atom {:name "User"}))
+
+;; (swap! app-state assoc :name "Andrea")
 
 (defn on-js-reload []
   ;; optionally touch your app-state to force rerendering depending on
   ;; your application
-  (swap! app-state update-in [:__figwheel_counter] inc)
   (.info js/console "Reloading Javascript...")
-  (.warn js/console "Figwheel's meta pragma: " @fig-reload/figwheel-meta-pragmas)
-  )
+  (.debug js/console "Figwheel's meta pragma: " @fig-reload/figwheel-meta-pragmas)
+  (dommy/set-text! (dommy/sel1 ".greetee-name") (:name @app-state)))

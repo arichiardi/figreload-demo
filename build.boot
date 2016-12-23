@@ -1,9 +1,8 @@
 (set-env!
- :resource-paths #{"src"}
- :dependencies '[[org.clojure/clojure         "1.8.0"]
-                 [org.clojure/clojurescript "1.9.293"]
-
-                 [adzerk/boot-cljs "1.7.228-3" :scope "test"]
+ :source-paths #{"src"}
+ :resource-paths #{"assets"}
+ :dependencies '[[org.clojure/clojure         "1.9.0-alpha14"]
+                 [adzerk/boot-cljs "2.0.0-figwheel" :scope "test"]
 
                  [adzerk/boot-reload "0.4.13-figwheel" :scope "test"]
                  [figwheel "0.5.9-SNAPSHOT" :scope "test"]
@@ -15,7 +14,11 @@
                  [adzerk/boot-cljs-repl "0.3.3" :scope "test"]
                  [com.cemerick/piggieback "0.2.1"  :scope "test"]
                  [weasel "0.7.0"  :scope "test"]
-                 [org.clojure/tools.nrepl "0.2.12" :scope "test"]])
+                 [org.clojure/tools.nrepl "0.2.12" :scope "test"]
+
+                 ;; App deps
+                 [org.clojure/clojurescript "1.9.293"  :scope "test"]
+                 [prismatic/dommy "1.1.0" :scope "test"]])
 
 (task-options! pom {:project "cljs-repl-web"
                     :version "0.1.0-SNAPSHOT"

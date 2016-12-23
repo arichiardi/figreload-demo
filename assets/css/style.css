@@ -1,2 +1,7 @@
 /* some style */
 
+body {
+    font-family: sans-serif;
+    background-color: #001144;
+    color: #00FF00;
+}
