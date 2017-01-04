@@ -1,6 +1,6 @@
-# fig-boot-reload
+# figreload-domo
 
-A sample project for trying [lein-figwheel](https://github.com/bhauman/lein-figwheel) integration in [boot-reload](https://github.com/adzerk-oss/boot-reload).
+A sample project for trying [lein-figwheel](https://github.com/bhauman/lein-figwheel) integration in [boot-figreload](https://github.com/boot-clj/boot-figreload/pull/1).
 
 ## Setup
 
