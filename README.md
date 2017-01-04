@@ -1,4 +1,4 @@
-# figreload-domo
+# figreload-demo
 
 A sample project for trying [lein-figwheel](https://github.com/bhauman/lein-figwheel) integration in [boot-figreload](https://github.com/boot-clj/boot-figreload/pull/1).
 
