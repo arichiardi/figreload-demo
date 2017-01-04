@@ -17,9 +17,9 @@
                  [org.clojure/clojurescript "1.9.293"  :scope "test"]
                  [prismatic/dommy "1.1.0" :scope "test"]])
 
-(task-options! pom {:project "cljs-repl-web"
+(task-options! pom {:project "figreload-demo"
                     :version "0.1.0-SNAPSHOT"
-                    :url "https://github.com/arichiardi/fig-boot-reload"
+                    :url "https://github.com/arichiardi/figreload-demo"
                     :description "A sample project for trying lein-figwheel integration in boot-reload."
                     :license {:name "Unlicense"
                               :url "http://unlicense.org/"
@@ -46,7 +46,7 @@
   (comp (serve :dir "assets/")
         (watch)
         (notify)
-        (reload :on-jsload 'fig-boot-reload.core/on-js-reload
+        (reload :on-jsload 'figreload-demo.core/on-js-reload
                 :client-opts {:debug true})
         (cljs-repl :nrepl-opts {:port 5055})
         (cljs :source-map true :optimizations :none)))

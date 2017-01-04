@@ -1,4 +1,4 @@
-(ns ^:figwheel-load fig-boot-reload.core
+(ns ^:figwheel-load figreload-demo.core
   (:require [dommy.core :as dommy]))
 
 (enable-console-print!)

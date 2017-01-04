@@ -1,5 +1,5 @@
-(defproject fig-boot-reload "0.1.0-SNAPSHOT"
-  :url "https://github.com/arichiardi/fig-boot-reload"
+(defproject figreload-demo "0.1.0-SNAPSHOT"
+  :url "https://github.com/arichiardi/figreload-demo"
   :description "A sample project for trying lein-figwheel integration in boot-reload."
   :license {:name "Unlicense"
             :url "http://unlicense.org/"
@@ -28,7 +28,7 @@
                 ;; the presence of a :figwheel configuration here
                 ;; will cause figwheel to inject the figwheel client
                 ;; into your build
-                :figwheel {:on-jsload "fig-boot-reload.core/on-js-reload"
+                :figwheel {:on-jsload "figreload-demo.core/on-js-reload"
                            ;; :open-urls will pop open your application
                            ;; in the default browser once Figwheel has
                            ;; started and complied your application.
@@ -36,9 +36,9 @@
                            ;; :open-urls ["http://localhost:3449/index.html"]
                            :debug true}
 
-                :compiler {:main fig-boot-reload.core
+                :compiler {:main figreload-demo.core
                            :asset-path "js/compiled/out"
-                           :output-to "resources/public/js/compiled/fig-boot-reload.js"
+                           :output-to "resources/public/js/compiled/figreload-demo.js"
                            :output-dir "resources/public/js/compiled/out"
                            :source-map-timestamp true
                            ;; To console.log CLJS data-structures make sure you enable devtools in Chrome
@@ -50,7 +50,7 @@
                {:id "min"
                 :source-paths ["src"]
                 :compiler {:output-to "resources/public/js/compiled/test_fig.js"
-                           :main fig-boot-reload.core
+                           :main figreload-demo.core
                            :optimizations :advanced
                            :pretty-print false}}]}
 
