@@ -1,9 +1,9 @@
 (set-env!
  :source-paths #{"src"}
  :resource-paths #{"assets"}
- :dependencies '[[org.clojure/clojure         "1.9.0-alpha14"]
+ :dependencies '[[org.clojure/clojure         "1.8.0"]
                  [adzerk/boot-cljs "2.0.0-SNAPSHOT" :scope "test"]
-                 [adzerk/boot-reload "0.5.0-figwheel-SNAPSHOT" :scope "test"]
+                 [powerlaces/boot-figreload "0.1.0-SNAPSHOT" :scope "test"]
 
                  [pandeiro/boot-http "0.7.6" :scope "test"]
                  [crisptrutski/boot-cljs-test "0.2.2" :scope "test"]
@@ -28,7 +28,7 @@
 (require
  '[adzerk.boot-cljs      :refer [cljs]]
  '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl]]
- '[adzerk.boot-reload    :refer [reload]]
+ '[powerlaces.boot-figreload    :refer [reload]]
  '[crisptrutski.boot-cljs-test  :refer [exit! test-cljs]]
  '[pandeiro.boot-http    :refer [serve]])
 
@@ -46,8 +46,7 @@
   (comp (serve :dir "assets/")
         (watch)
         (notify)
-        (reload :on-jsload 'figreload-demo.core/on-js-reload
-                :client-opts {:debug true})
+        (reload :client-opts {:debug true})
         (cljs-repl :nrepl-opts {:port 5055})
         (cljs :source-map true :optimizations :none)))
 
