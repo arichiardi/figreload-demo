@@ -1,0 +1,2 @@
+{:require  [scripts.core]
+ :boot-reload {:on-jsload scripts.core/on-js-reload}}

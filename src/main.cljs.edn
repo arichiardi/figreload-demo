@@ -1,2 +1,0 @@
-{:require  [figreload-demo.core]
- :boot-reload {:on-jsload figreload-demo.core/on-js-reload}}

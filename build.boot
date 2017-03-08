@@ -4,6 +4,7 @@
  :dependencies '[[org.clojure/clojure         "1.8.0"]
                  [adzerk/boot-cljs "2.0.0-SNAPSHOT" :scope "test"]
                  [powerlaces/boot-figreload "0.1.0-SNAPSHOT" :scope "test"]
+                 [figwheel-sidecar "0.5.9" :scope "test"]
 
                  [pandeiro/boot-http "0.7.6" :scope "test"]
                  [crisptrutski/boot-cljs-test "0.2.2" :scope "test"]
