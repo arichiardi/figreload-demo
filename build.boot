@@ -2,8 +2,8 @@
  :source-paths #{"src"}
  :resource-paths #{"assets"}
  :dependencies '[[org.clojure/clojure         "1.8.0"]
-                 [adzerk/boot-cljs "2.0.0-SNAPSHOT" :scope "test"]
-                 [powerlaces/boot-figreload "0.1.0-SNAPSHOT" :scope "test"]
+                 [adzerk/boot-cljs "2.0.0" :scope "test"]
+                 [powerlaces/boot-figreload "0.1.1-SNAPSHOT" :scope "test"]
 
                  [pandeiro/boot-http "0.7.6" :scope "test"]
                  [crisptrutski/boot-cljs-test "0.2.2" :scope "test"]
@@ -46,7 +46,8 @@
   (comp (serve :dir "assets/")
         (watch)
         (notify)
-        (reload :client-opts {:debug true})
+        (reload :client-opts {:debug true}
+                :asset-path "/public") ;; Deprecated
         (cljs-repl :nrepl-opts {:port 5055})
         (cljs :source-map true :optimizations :none)))
 
