@@ -4,17 +4,13 @@ A sample project for trying [lein-figwheel](https://github.com/bhauman/lein-figw
 
 ## Setup
 
-To get a `lein` interactive development environment run:
-
-    lein figwheel
-
-and open your browser at [localhost:3449](http://localhost:3449/), nRepl at `localhost:5088`.
-
-To get a `boot` interactive development environment run:
+To get a `boot` interactive development environment, run:
 
     boot dev
 
-and open your browser at [localhost:3000](http://localhost:3449/), nRepl at `localhost:5055`.
+To get a Dirac inseractive environment, run:
+
+    boot dev -D
 
 ## License
 
