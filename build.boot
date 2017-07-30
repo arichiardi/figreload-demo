@@ -2,7 +2,7 @@
  :source-paths #{"src"}
  :resource-paths #{"assets"}
  :dependencies '[[org.clojure/clojure         "1.8.0"]
-                 [adzerk/boot-cljs "2.1.0-SNAPSHOT" :scope "test"]
+                 [adzerk/boot-cljs "2.1.0" :scope "test"]
                  [powerlaces/boot-figreload "0.1.1-SNAPSHOT" :scope "test"]
 
                  [pandeiro/boot-http "0.7.6" :scope "test"]
