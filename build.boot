@@ -3,7 +3,7 @@
  :resource-paths #{"assets"}
  :dependencies '[[org.clojure/clojure         "1.8.0"]
                  [adzerk/boot-cljs "2.1.0" :scope "test"]
-                 [powerlaces/boot-figreload "0.1.1-SNAPSHOT" :scope "test"]
+                 [powerlaces/boot-figreload "0.5.14-SNAPSHOT" :scope "test"]
 
                  [pandeiro/boot-http "0.7.6" :scope "test"]
                  [crisptrutski/boot-cljs-test "0.2.2" :scope "test"]
@@ -17,7 +17,7 @@
                  [org.clojure/tools.nrepl "0.2.13" :scope "test"]
 
                  ;; App deps
-                 [org.clojure/clojurescript "1.9.562"  :scope "test"]
+                 [org.clojure/clojurescript "1.9.908"  :scope "test"]
                  [prismatic/dommy "1.1.0" :scope "test"]])
 
 (task-options! pom {:project "figreload-demo"
@@ -45,7 +45,9 @@
         (speak)
         (test-cljs)))
 
-(deftask dev [D with-dirac bool "Enable Dirac Devtools."]
+(deftask dev
+  [D with-dirac      bool "Enable Dirac Devtools."
+   p port       PORT int  "The nRepl port"]
   (comp (serve :dir "assets/")
         (watch)
         (notify)
@@ -53,8 +55,8 @@
         (reload :client-opts {:debug true}
                 :asset-path "/public") ;; Deprecated
         (if-not with-dirac
-          (cljs-repl)
-          (dirac))
+          (cljs-repl :nrepl-opts {:port port})
+          (dirac :nrepl-opts {:port port}))
         (cljs :optimizations :none
               :source-map true
               :compiler-options {:external-config
